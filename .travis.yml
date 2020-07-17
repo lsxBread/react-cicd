@@ -4,10 +4,10 @@ services:
 #Tell Travis that we need docker
   - docker
  
-#Tell Travis that before executing the script, create the docker image from the Dockerfile.prod.
+#Tell Travis that before executing the script, create the docker image from the Dockerfile.dev.
 before_install:
-  - docker-compose -f docker-compose-prod.yml up
+  - docker build -t jiangren-react -f Dockerfile.dev .
  
 #Tell Travis to execute tests (-- -- Coverage will exit npm run test and print out the code coverage)
 script:
-  - yarn test
+  - docker run jiangren-react npm run test -- --coverage
