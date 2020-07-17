@@ -31,7 +31,8 @@ deploy:
   on:
     branch: master
   #Specify the Environment variable name from which Travis can get the ACCESS_KEY to AWS
-  access_key_id: $AWS_ACCESS_KEY
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
   #Specify the Environment variable name from which Travis can get the SECRET_KEY to AWS
   secret_access_key:
     secure: $AWS_SECRET_KEY
