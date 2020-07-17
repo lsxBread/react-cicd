@@ -1,0 +1,13 @@
+#Tell Travis that we need super user permissions
+sudo: required
+services:
+#Tell Travis that we need docker
+  - docker
+ 
+#Tell Travis that before executing the script, create the docker image from the Dockerfile.prod.
+before_install:
+  - docker-compose -f docker-compose-prod.yml up
+ 
+#Tell Travis to execute tests (-- -- Coverage will exit npm run test and print out the code coverage)
+script:
+  - yarn test
