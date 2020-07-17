@@ -5,11 +5,11 @@ services:
  
 #Tell Travis that before executing the script, create the docker image from the DevDockerfile.
 before_install:
-  - docker build -t jiangren-react -f Dockerfile.prod .
+  - docker build -t jiangren-react -f Dockerfile.dev .
  
 #Tell Travis to execute tests (-- -- Coverage will exit npm run test and print out the code coverage)
 script:
-  - docker run jiangren-react npm run test -- --coverage
+  - docker run -e CI=true jiangren-react npm run test -- --coverage
  
 deploy:
   #specify the provider 
