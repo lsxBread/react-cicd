@@ -1,4 +1,7 @@
 sudo: required
+language: node_js
+node_js:
+    - "stable"
 services:
 #Tell Travis that we need docker
   - docker
@@ -31,4 +34,4 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   #Specify the Environment variable name from which Travis can get the SECRET_KEY to AWS
   secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+    secure: $AWS_SECRET_KEY
