@@ -1,7 +1,5 @@
 sudo: required
-language: node_js
-node_js:
-    - "stable"
+language: generic
 services:
 #Tell Travis that we need docker
   - docker
@@ -20,19 +18,18 @@ deploy:
   #specify the region where the provider is present, You can get this from the AWS ElasticBeanstalk dashboard
   region: "ap-southeast-2"
   #Specify the application name in AWS elastic beanstalk
-  app: "docker-react-aws"
+  app: "jiangren-react"
   #Specify the environment name in AWS elastic beanstalk
-  env: "DockerReactAws-env"
+  env: "JiangrenReact-env"
   #Specify the Bucket name which is the name of the S3 (storage) which is created as part of Elastic beanstalk in AWS
   bucket_name: "elasticbeanstalk-ap-southeast-2-782233832006"
   #specify the path of the Bucket , this will be similar to the App name above
-  bucket_path: "docker-react-aws"
+  bucket_path: "jiangren-react"
   #specify when you want to deploy (we want to deploy only when we push code to master branch)
   on:
     branch: master
   #Specify the Environment variable name from which Travis can get the ACCESS_KEY to AWS
-  access_key_id:
-    secure: $AWS_ACCESS_KEY
+  access_key_id: $AWS_ACCESS_KEY
   #Specify the Environment variable name from which Travis can get the SECRET_KEY to AWS
   secret_access_key:
     secure: $AWS_SECRET_KEY
