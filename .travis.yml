@@ -11,6 +11,7 @@ before_install:
 #Tell Travis to execute tests (-- -- Coverage will exit npm run test and print out the code coverage)
 script:
   - docker run -e CI=true jiangren-react npm run test -- --coverage
+  - docker build -t jiangren-react .
  
 deploy:
   #specify the provider 
