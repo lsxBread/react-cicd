@@ -21,7 +21,7 @@ deploy:
   #Specify the application name in AWS elastic beanstalk
   app: "jiangren-react"
   #Specify the environment name in AWS elastic beanstalk
-  env: "JiangrenReact-env-1"
+  env: "Docker"
   #Specify the Bucket name which is the name of the S3 (storage) which is created as part of Elastic beanstalk in AWS
   bucket_name: "elasticbeanstalk-ap-southeast-2-782233832006"
   #specify the path of the Bucket , this will be similar to the App name above
